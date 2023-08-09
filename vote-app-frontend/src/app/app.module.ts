@@ -7,6 +7,7 @@ import { MainComponent } from './components/main/main.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CandidatesComponent } from './components/candidates/candidates.component';
 import { HttpClientModule } from '@angular/common/http';
+import { VotersComponent } from './components/voters/voters.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
     MainComponent,
     HeaderComponent,
     CandidatesComponent,
+    VotersComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

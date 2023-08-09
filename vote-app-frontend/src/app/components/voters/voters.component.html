@@ -1,0 +1,23 @@
+<div class="container mt-4">
+  <h2>Voters</h2>
+  <button class="btn btn-primary mb-2">+ Add New Voters</button>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Has voted</th>
+        <!-- Add more columns as needed -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let voter of voters">
+        <td>{{ voter.id }}</td>
+        <td>{{ voter.name }}</td>
+        <td>{{ voter.hasVoted }}</td>
+        <!-- Display other voters properties as needed -->
+      </tr>
+    </tbody>
+  </table>
+</div>
