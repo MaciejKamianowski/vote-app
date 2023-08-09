@@ -1,5 +1,6 @@
 package kamianowski.maciej.vote.app.rest;
 
+import kamianowski.maciej.vote.app.payload.VoterInfoPayload;
 import kamianowski.maciej.vote.app.payload.VoterPayload;
 import kamianowski.maciej.vote.app.service.VoterService;
 import lombok.RequiredArgsConstructor;
@@ -48,5 +49,10 @@ public class VoterController {
     public ResponseEntity<String> deleteVoter(@RequestBody VoterPayload payload) {
         voterService.deleteVoter(payload);
         return ResponseEntity.ok("Voter with id " + payload.getId() + " deleted.");
+    }
+
+    @GetMapping("/all/info")
+    public ResponseEntity<List<VoterInfoPayload>> getAllInfo() {
+        return new ResponseEntity<>(voterService.getAllVotersInfo(), HttpStatus.OK);
     }
 }
