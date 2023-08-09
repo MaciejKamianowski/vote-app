@@ -11,21 +11,25 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "_voters")
-public class Voter {
+@Table(name = "_election_votes")
+public class ElectionVote {
     @Id
     @SequenceGenerator(
-            name = "voter_sequence",
-            sequenceName = "voter_sequence",
+            name = "election_vote_sequence",
+            sequenceName = "election_vote_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "voter_sequence"
+            generator = "election_vote_sequence"
     )
     private Long id;
-    private String name;
 
-    @OneToOne(mappedBy = "voter")
-    private ElectionVote vote;
+    @ManyToOne
+    @JoinColumn(name = "candidate_id")
+    private Candidate candidate;
+
+    @OneToOne
+    @JoinColumn(name = "voter_id")
+    private Voter voter;
 }

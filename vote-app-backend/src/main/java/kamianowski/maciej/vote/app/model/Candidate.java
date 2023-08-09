@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -25,4 +27,7 @@ public class Candidate {
     )
     private Long id;
     private String name;
+
+    @OneToMany(mappedBy = "candidate")
+    private List<ElectionVote> votes;
 }

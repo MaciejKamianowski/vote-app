@@ -1,9 +1,7 @@
 package kamianowski.maciej.vote.app.service;
 
 import kamianowski.maciej.vote.app.mapper.CandidateMapper;
-import kamianowski.maciej.vote.app.mapper.VoterMapper;
 import kamianowski.maciej.vote.app.model.Candidate;
-import kamianowski.maciej.vote.app.model.Voter;
 import kamianowski.maciej.vote.app.payload.CandidatePayload;
 import kamianowski.maciej.vote.app.repository.CandidateRepository;
 import lombok.RequiredArgsConstructor;
