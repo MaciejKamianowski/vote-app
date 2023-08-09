@@ -16,7 +16,7 @@ export class CandidatesComponent implements OnInit {
   }
 
   fetchCandidates(): void {
-    this.http.get<any[]>('http://localhost:8080/candidates/all').subscribe(
+    this.http.get<any[]>('http://localhost:8080/candidates/all/info').subscribe(
       (data) => {
         this.candidates = data;
       },

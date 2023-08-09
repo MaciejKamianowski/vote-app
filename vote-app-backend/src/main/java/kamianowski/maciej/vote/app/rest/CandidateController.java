@@ -1,5 +1,6 @@
 package kamianowski.maciej.vote.app.rest;
 
+import kamianowski.maciej.vote.app.payload.CandidateInfoPayload;
 import kamianowski.maciej.vote.app.payload.CandidatePayload;
 import kamianowski.maciej.vote.app.service.CandidateService;
 import lombok.RequiredArgsConstructor;
@@ -48,5 +49,10 @@ public class CandidateController {
     public ResponseEntity<String> deleteVoter(@RequestBody CandidatePayload payload) {
         candidateService.deleteCandidate(payload);
         return ResponseEntity.ok("Candidate with id " + payload.getId() + " deleted.");
+    }
+
+    @GetMapping("/all/info")
+    public ResponseEntity<List<CandidateInfoPayload>> getAllInfo() {
+        return new ResponseEntity<>(candidateService.getAllCandidateInfo(), HttpStatus.OK);
     }
 }

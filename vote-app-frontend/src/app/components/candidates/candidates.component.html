@@ -7,6 +7,7 @@
       <tr>
         <th>ID</th>
         <th>Name</th>
+        <th>Votes</th>
         <!-- Add more columns as needed -->
       </tr>
     </thead>
@@ -14,6 +15,7 @@
       <tr *ngFor="let candidate of candidates">
         <td>{{ candidate.id }}</td>
         <td>{{ candidate.name }}</td>
+        <td>{{ candidate.votesNumber }}</td>
         <!-- Display other candidate properties as needed -->
       </tr>
     </tbody>
