@@ -1,0 +1,21 @@
+<div class="container mt-4">
+  <h2>Candidates</h2>
+  <button class="btn btn-primary mb-2">+ Add New Candidate</button>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <!-- Add more columns as needed -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let candidate of candidates">
+        <td>{{ candidate.id }}</td>
+        <td>{{ candidate.name }}</td>
+        <!-- Display other candidate properties as needed -->
+      </tr>
+    </tbody>
+  </table>
+</div>
