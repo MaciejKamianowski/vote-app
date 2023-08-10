@@ -16,7 +16,7 @@ public class ElectionVoteController {
     final private ElectionVoteService electionVoteService;
 
     @PostMapping("/vote")
-    public ResponseEntity<String> addNewCandidate(@RequestBody ElectionVotePayload payload) {
+    public ResponseEntity<String> castTheVote(@RequestBody ElectionVotePayload payload) {
         try {
             electionVoteService.castVote(payload);
         } catch (RuntimeException e) {
