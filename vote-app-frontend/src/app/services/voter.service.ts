@@ -12,4 +12,9 @@ export class VoterService {
   getAllVoters(): Observable<any> {
     return this.http.get<any[]>('http://localhost:8080/voters/all');
   }
+
+  addNewVoter(voterPayload: voterPayload): Observable<any> {
+    const url = 'http://localhost:8080/voters/new'; // Adjust the URL accordingly
+    return this.http.post(url, voterPayload);
+  }
 }
