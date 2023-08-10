@@ -8,6 +8,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { CandidatesComponent } from './components/candidates/candidates.component';
 import { HttpClientModule } from '@angular/common/http';
 import { VotersComponent } from './components/voters/voters.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,8 +18,9 @@ import { VotersComponent } from './components/voters/voters.component';
     HeaderComponent,
     CandidatesComponent,
     VotersComponent,
+    FooterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

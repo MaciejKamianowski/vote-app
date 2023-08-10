@@ -1,0 +1,37 @@
+<div class="footer">
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>
+          <div class="dropdown">
+            <label for="iam">I am:</label>
+            <select id="iam" [(ngModel)]="selectedVoterName">
+              <option *ngFor="let voter of voters" [value]="voter.name">
+                {{ voter.name }}
+              </option>
+            </select>
+          </div>
+        </td>
+        <td>
+          <div class="dropdown">
+            <label for="voteFor">I vote for:</label>
+            <select id="voteFor" [(ngModel)]="selectedCandidateName">
+              <option
+                *ngFor="let candidate of candidates"
+                [value]="candidate.name"
+              >
+                {{ candidate.name }}
+              </option>
+            </select>
+          </div>
+        </td>
+        <td>
+          <button class="btn btn-primary mb-2" (click)="performPostRequest()">
+            Vote
+          </button>
+        </td>
+        <!-- Display other candidate properties as needed -->
+      </tr>
+    </tbody>
+  </table>
+</div>
