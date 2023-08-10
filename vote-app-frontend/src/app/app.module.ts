@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { VotersComponent } from './components/voters/voters.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { NewCandidateComponent } from './components/new-candidate/new-candidate.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     CandidatesComponent,
     VotersComponent,
     FooterComponent,
+    NewCandidateComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

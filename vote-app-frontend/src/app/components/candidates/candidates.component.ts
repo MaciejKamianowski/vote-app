@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-candidates',
@@ -9,10 +10,14 @@ import { HttpClient } from '@angular/common/http';
 export class CandidatesComponent implements OnInit {
   candidates: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
     this.fetchCandidates();
+  }
+
+  redirectToNewCandidate(): void {
+    this.router.navigate(['/new-candidate']);
   }
 
   fetchCandidates(): void {
