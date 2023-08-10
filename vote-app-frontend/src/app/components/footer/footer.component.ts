@@ -5,6 +5,7 @@ import { CandidatePayload } from 'src/app/classes/CandidatePayload';
 import { ElectionVoteService } from 'src/app/services/election-vote.service';
 import { CandidateService } from 'src/app/services/candidate.service';
 import { VoterService } from 'src/app/services/voter.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',

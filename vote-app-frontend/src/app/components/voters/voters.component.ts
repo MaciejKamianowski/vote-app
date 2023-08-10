@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-voters',
@@ -9,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class VotersComponent implements OnInit {
   voters: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
     this.fetchVoters();
@@ -24,5 +25,9 @@ export class VotersComponent implements OnInit {
         console.error('Error fetching voters:', error);
       }
     );
+  }
+
+  redirectToNewVoter(): void {
+    this.router.navigate(['/new-voter']);
   }
 }
