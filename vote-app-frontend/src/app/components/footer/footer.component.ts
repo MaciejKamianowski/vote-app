@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { voterPayload } from 'src/app/classes/VoterPayload';
 import { CandidatePayload } from 'src/app/classes/CandidatePayload';
 import { ElectionVoteService } from 'src/app/services/election-vote.service';
+import { CandidateService } from 'src/app/services/candidate.service';
 
 @Component({
   selector: 'app-footer',
@@ -19,16 +20,10 @@ export class FooterComponent {
 
   constructor(
     private http: HttpClient,
+    private candidateService: CandidateService,
     private electionVoteService: ElectionVoteService
   ) {
-    this.http.get<any[]>('http://localhost:8080/candidates/all').subscribe(
-      (data) => {
-        this.candidates = data;
-      },
-      (error) => {
-        console.error('Error fetching candidates:', error);
-      }
-    );
+    this.candidates = this.candidateService.getAllCandidates();
 
     this.http.get<any[]>('http://localhost:8080/voters/all').subscribe(
       (data) => {
